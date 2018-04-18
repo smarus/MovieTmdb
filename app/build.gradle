@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
 
 android {
     compileSdkVersion 26
@@ -24,8 +25,8 @@ ext {
     rxandroidVersion = '2.0.2'
     rxjavaVersion = '2.1.12'
     butterKnifeVersion = '8.8.1'
-    picassoVersion = '2.71828'
-    picassoDownloaderVersion = '1.1.0'
+    picassoVersion = '2.5.2'
+    picassoDownloaderVersion = '1.0.2'
 }
 
 dependencies {
@@ -49,9 +50,9 @@ dependencies {
     implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
     implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
 
-    //image
-    compile "com.squareup.picasso:picasso:$picassoVersion"
-    compile "com.jakewharton.picasso:picasso2-okhttp3-downloader:$picassoDownloaderVersion"
+    //image downloading
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
+    implementation "com.jakewharton.picasso:picasso2-okhttp3-downloader:$picassoDownloaderVersion"
 
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
