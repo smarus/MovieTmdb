@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MoviesResponse {
+public class MovieResponse {
 
     @SerializedName("results")
     private List<Movie> mMovies;
