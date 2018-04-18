@@ -1,6 +1,23 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 
+
+def getProperty(String filename, String propName) {
+    def propsFile = rootProject.file(filename)
+    if (propsFile.exists()) {
+        def props = new Properties()
+        props.load(new FileInputStream(propsFile))
+        if (props[propName] != null) {
+            return props[propName]
+        } else {
+            print("No such property " + propName + " in file " + filename);
+        }
+    } else {
+        print(filename + " does not exist!")
+    }
+}
+
+
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -10,6 +27,10 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "MOVIE_ENDPOINT", '"http://api.themoviedb.org/3/movie/"'
+        buildConfigField "String", "MOVIE_API_KEY", "\"${getProperty("local.properties", "movie_api_key")}\""
+        buildConfigField "String", "IMAGES_BASE_URL", '"http://image.tmdb.org/t/p/"'
     }
     buildTypes {
         release {

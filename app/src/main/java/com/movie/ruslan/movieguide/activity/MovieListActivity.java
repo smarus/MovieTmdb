@@ -1,9 +1,11 @@
-package com.movie.ruslan.movieguide;
+package com.movie.ruslan.movieguide.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.movie.ruslan.movieguide.R;
+
+public class MovieListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
