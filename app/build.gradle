@@ -21,11 +21,11 @@ ext {
     supportVersion = '24.2.1'
     okhttpVersion = '3.10.0'
     retrofitVersion = '2.4.0'
-    rxandroidVersion = '1.2.1'
-    rxjavaVersion = '1.1.10'
-    butterKnifeVersion = '8.3.0'
-    picassoVersion = '2.5.2'
-    picassoDownloaderVersion = '1.0.2'
+    rxandroidVersion = '2.0.2'
+    rxjavaVersion = '2.1.12'
+    butterKnifeVersion = '8.8.1'
+    picassoVersion = '2.71828'
+    picassoDownloaderVersion = '1.1.0'
 }
 
 dependencies {
@@ -37,8 +37,21 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$okhttpVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
 
+    //converters
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    //bind views
+    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
     //reactive extensions
-    implementation "io.reactivex.rxjava2:rxjava:2.x.y"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroidVersion"
+
+    //image
+    compile "com.squareup.picasso:picasso:$picassoVersion"
+    compile "com.jakewharton.picasso:picasso2-okhttp3-downloader:$picassoDownloaderVersion"
 
 
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
