@@ -20,7 +20,7 @@ public class MovieApplication extends Application {
     public void onCreate() {
         super.onCreate();
         sInstance = this;
-
+        Realm.init(this);
         Picasso picasso = new Picasso.Builder(this)
                 .downloader(new OkHttp3Downloader(this))
                 .build();

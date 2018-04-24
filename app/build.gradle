@@ -31,6 +31,11 @@ android {
         buildConfigField "String", "MOVIE_ENDPOINT", '"http://api.themoviedb.org/3/movie/"'
         buildConfigField "String", "MOVIE_API_KEY", "\"${getProperty("local.properties", "movie_api_key")}\""
         buildConfigField "String", "IMAGES_BASE_URL", '"http://image.tmdb.org/t/p/"'
+
+        compileOptions {
+            sourceCompatibility JavaVersion.VERSION_1_8
+            targetCompatibility JavaVersion.VERSION_1_8
+        }
     }
     buildTypes {
         release {
